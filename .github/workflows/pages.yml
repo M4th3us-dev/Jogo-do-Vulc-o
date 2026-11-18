@@ -1,0 +1,55 @@
+name: Publicar jogo no GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  exportar-e-publicar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Baixar projeto
+        uses: actions/checkout@v4
+
+      - name: Instalar Godot com modelos de exportacao
+        uses: chickensoft-games/setup-godot@v2
+        with:
+          version: 4.5.1
+          use-dotnet: false
+          include-templates: true
+
+      - name: Importar recursos
+        run: godot --headless --editor --path . --quit
+
+      - name: Exportar jogo para Web
+        run: |
+          mkdir -p docs
+          godot --headless --path . --export-release "Web" docs/index.html
+          test -s docs/index.html
+          test -n "$(find docs -name '*.wasm' -print -quit)"
+          test -n "$(find docs -name '*.pck' -print -quit)"
+
+      - name: Configurar Pages
+        uses: actions/configure-pages@v5
+
+      - name: Enviar arquivos do jogo
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - name: Publicar
+        id: deployment
+        uses: actions/deploy-pages@v4
