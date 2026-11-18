@@ -126,20 +126,11 @@ func criar_particulas(pos: Vector2) -> void:
 func atualizar_texto() -> void:
 	hud.text = "CRATERA DE VULCÃO     |     Tempo: %02d:%02d     |     Cristal: %d/5     |     Abates: %d" % [int(tempo / 60.0), int(tempo) % 60, MAX_TOQUES - toques, abates]
 	if estado == "inicio":
-		aviso.text = "CRATERA DE VULCÃO
-DEFENDA O CRISTAL POR 3 MINUTOS
-WASD / SETAS: mover  |  ESPAÇO: atacar
-ENTER PARA COMEÇAR"
+		aviso.text = "CRATERA DE VULCÃO\nDEFENDA O CRISTAL POR 3 MINUTOS\nWASD / SETAS: mover  |  ESPAÇO: atacar\nENTER PARA COMEÇAR"
 	elif estado == "vitoria":
-		aviso.text = "VOCÊ VENCEU!
-O cristal resistiu aos 3 minutos!
-Inimigos derrotados: %d
-ENTER PARA RECOMEÇAR" % abates
+		aviso.text = "VOCÊ VENCEU!\nO cristal resistiu aos 3 minutos!\nInimigos derrotados: %d\nENTER PARA RECOMEÇAR" % abates
 	elif estado == "derrota":
-		aviso.text = "VOCÊ PERDEU!
-O cristal recebeu 5 ataques.
-Inimigos derrotados: %d
-ENTER PARA TENTAR NOVAMENTE" % abates
+		aviso.text = "VOCÊ PERDEU!\nO cristal recebeu 5 ataques.\nInimigos derrotados: %d\nENTER PARA TENTAR NOVAMENTE" % abates
 	else:
 		aviso.text = ""
 
