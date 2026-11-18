@@ -7,7 +7,7 @@
 
 ## Objetivo deste registro
 
-Este documento descreve como a inteligência artificial foi utilizada como apoio durante o desenvolvimento e a publicação do jogo. O ChatGPT foi empregado para explicar conceitos, sugerir soluções, auxiliar na escrita e revisão de código e orientar procedimentos técnicos. O uso da ferramenta não substitui a necessidade de estudar, compreender e avaliar o funcionamento do projeto.
+Este documento descreve como a inteligência artificial foi utilizada como apoio durante o desenvolvimento e a publicação do jogo. O ChatGPT foi empregado para explicar conceitos, sugerir soluções, auxiliar na escrita e revisão de código e orientar procedimentos técnicos.
 
 ## Processo de desenvolvimento e aprendizagem
 
@@ -27,11 +27,6 @@ O auxílio do ChatGPT incluiu:
 - Orientações sobre a organização do projeto e seu envio ao GitHub;
 - Criação e ajuste de arquivos de configuração para exportar o jogo para Web e publicá-lo com GitHub Actions e GitHub Pages.
 
-## Minha participação e aprendizado
-
-Minha participação no projeto envolve acompanhar o desenvolvimento, estudar as explicações, definir o que desejo alcançar com o jogo e utilizar o projeto como atividade prática de aprendizagem. O código e as orientações recebidas devem ser analisados e compreendidos antes de serem apresentados como resultado do trabalho.
-
-O uso da IA foi importante principalmente para esclarecer como as partes do jogo se relacionam. A explicação do script permitiu estudar a lógica de atualização dos inimigos, a contagem do tempo, o sistema de ataque e a verificação das condições de fim de partida.
 
 ## Publicação no GitHub
 
